@@ -13,6 +13,24 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+
+        <Annotations Target="ODataDemo.Product">
+            <Annotation Term="UI.LineItem">
+                // Colums we want to display in the UI
+                <Collection>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Name of Product"/> // Column name on UI
+                        <PropertyValue Property="Value" Path="Name"/>              // Binding data to column  
+                    </Record>
+
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Price of Product"/> // Column name on UI
+                        <PropertyValue Property="Value" Path="Price"/>              // Binding data to column  
+                    </Record>
+                </Collection>
+            </Annotation>
+        </Annotations >
+
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
